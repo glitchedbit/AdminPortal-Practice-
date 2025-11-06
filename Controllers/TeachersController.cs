@@ -1,0 +1,49 @@
+using EmployeeAdminPortal.CQRS.Infrastructure;
+using EmployeeAdmnPortal.CQRS.Commands;
+using EmployeeAdmnPortal.CQRS.Query;
+using EmployeeAdmnPortal.Models.Entities;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EmployeeAdmnPortal.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TeachersController : ControllerBase
+  {
+        private readonly IMediator _mediator;
+
+        public TeachersController(IMediator mediator)
+   {
+    _mediator = mediator;
+        }
+
+ [HttpGet]
+        public async Task<IActionResult> GetAsync()
+        {
+       var teachers = await _mediator.Send(new GetTeacherQuery());
+   return Ok(teachers);
+        }
+
+      [HttpPost("add")]
+        public async Task<IActionResult> Add([FromBody] post_teacher_command command)
+        {
+         var result = await _mediator.Send(command);
+     return Ok(result);
+      }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> Update([FromBody] put_teacher_command command)
+        {
+  var result = await _mediator.Send(command);
+   return result != null ? Ok(result) : NotFound();
+}
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _mediator.Send(new delete_teacher_command { Id = id });
+    return result ? Ok("Deleted Successfully") : NotFound("Teacher not found");
+        }
+    }
+}
