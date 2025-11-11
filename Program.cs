@@ -3,11 +3,16 @@ using EmployeeAdmnPortal.Data;
 //using EmployeeAdmnPortal.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using EmployeeAdmnPortal.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
+
+//logging services
+builder.Services.AddSingleton<ILoggerServices, LoggerServices>();
 
 //  Swagger/OpenAPI proper configuration
 builder.Services.AddEndpointsApiExplorer();
@@ -39,6 +44,24 @@ builder.Services.AddMediatR(cfg =>
 //  AutoMapper
 //builder.Services.AddAutoMapper(typeof(MappingProfile)); // use your MappingProfile class
 
+
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()       // minimum log level
+    .Enrich.FromLogContext()          // enrich logs with context
+    .WriteTo.Console()                // optional: console output
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day) // file logging
+    .WriteTo.MSSqlServer(
+        connectionString: builder.Configuration.GetConnectionString("DefaultlogConnection"),
+        sinkOptions: new Serilog.Sinks.MSSqlServer.MSSqlServerSinkOptions
+        {
+            TableName = "Logs",
+            AutoCreateSqlTable = true
+        })
+    .CreateLogger();
+
+builder.Host.UseSerilog(); // replace default logging
+
 var app = builder.Build();
 
 // Configure middleware
@@ -52,6 +75,10 @@ if (app.Environment.IsDevelopment())
         //c.RoutePrefix = string.Empty; // optional: opens swagger at root URL
     });
 }
+// Middleware example
+app.UseSerilogRequestLogging(); // logs HTTP requests automatically
+
+app.MapGet("/", () => "Hello World!");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
