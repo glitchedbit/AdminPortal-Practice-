@@ -1,0 +1,90 @@
+2025-11-11 14:02:48.380 +05:00 [INF] Now listening on: https://localhost:7005
+2025-11-11 14:02:48.426 +05:00 [INF] Now listening on: http://localhost:5140
+2025-11-11 14:02:48.641 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-11 14:02:48.644 +05:00 [INF] Hosting environment: Development
+2025-11-11 14:02:48.644 +05:00 [INF] Content root path: C:\Users\hsma\source\repos\EmployeeAdmnPortal
+2025-11-11 14:02:48.959 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2025-11-11 14:02:49.146 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 188.2673ms
+2025-11-11 14:02:49.184 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 14:02:49.184 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 14:02:49.195 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 11.0938ms
+2025-11-11 14:02:49.234 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.0323ms
+2025-11-11 14:02:49.436 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 14:02:49.456 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.5449ms
+2025-11-11 14:03:12.748 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/ - null null
+2025-11-11 14:03:12.762 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-11-11 14:03:12.764 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-11-11 14:03:12.768 +05:00 [INF] HTTP GET / responded 200 in 10.0219 ms
+2025-11-11 14:03:12.771 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/ - 200 null text/plain; charset=utf-8 22.4533ms
+2025-11-11 14:04:08.889 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/api/AsyncTest - null null
+2025-11-11 14:04:08.896 +05:00 [INF] Executing endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.GetAsync (EmployeeAdmnPortal)'
+2025-11-11 14:04:08.927 +05:00 [INF] Route matched with {action = "Get", controller = "AsyncTest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync() on controller EmployeeAdmnPortal.Controllers.AsyncTest (EmployeeAdmnPortal).
+2025-11-11 14:04:08.933 +05:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-11 14:04:10.069 +05:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[TableId], [e].[Address], [e].[Email], [e].[Name], [e].[Qualification]
+FROM [Employees] AS [e]
+2025-11-11 14:04:10.146 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeAdmnPortal.Models.Entities.Employee, EmployeeAdmnPortal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-11 14:04:10.164 +05:00 [INF] Executed action EmployeeAdmnPortal.Controllers.AsyncTest.GetAsync (EmployeeAdmnPortal) in 1230.1191ms
+2025-11-11 14:04:10.167 +05:00 [INF] Executed endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.GetAsync (EmployeeAdmnPortal)'
+2025-11-11 14:04:10.172 +05:00 [INF] HTTP GET /api/AsyncTest responded 200 in 1276.0213 ms
+2025-11-11 14:04:10.183 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/api/AsyncTest - 200 null application/json; charset=utf-8 1293.8603ms
+2025-11-11 14:04:33.852 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7005/api/AsyncTest/delete/11 - null null
+2025-11-11 14:04:33.858 +05:00 [INF] Executing endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal)'
+2025-11-11 14:04:33.876 +05:00 [INF] Route matched with {action = "Delete", controller = "AsyncTest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeAdmnPortal.Controllers.AsyncTest (EmployeeAdmnPortal).
+2025-11-11 14:04:33.949 +05:00 [INF] deleting...... part called 
+2025-11-11 14:04:33.953 +05:00 [INF] Deletion 11 started......
+2025-11-11 14:04:34.081 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[TableId], [e].[Address], [e].[Email], [e].[Name], [e].[Qualification]
+FROM [Employees] AS [e]
+WHERE [e].[TableId] = @__p_0
+2025-11-11 14:04:34.089 +05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-11-11 14:04:34.091 +05:00 [INF] Executed action EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal) in 211.2643ms
+2025-11-11 14:04:34.093 +05:00 [INF] Executed endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal)'
+2025-11-11 14:04:34.094 +05:00 [INF] HTTP DELETE /api/AsyncTest/delete/11 responded 404 in 235.5844 ms
+2025-11-11 14:04:34.096 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7005/api/AsyncTest/delete/11 - 404 null text/plain; charset=utf-8 243.7017ms
+2025-11-11 14:15:43.175 +05:00 [INF] Now listening on: https://localhost:7005
+2025-11-11 14:15:43.212 +05:00 [INF] Now listening on: http://localhost:5140
+2025-11-11 14:15:43.391 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-11 14:15:43.393 +05:00 [INF] Hosting environment: Development
+2025-11-11 14:15:43.394 +05:00 [INF] Content root path: C:\Users\hsma\source\repos\EmployeeAdmnPortal
+2025-11-11 14:15:43.621 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2025-11-11 14:15:43.771 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 151.4225ms
+2025-11-11 14:15:43.809 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 14:15:43.819 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 9.9148ms
+2025-11-11 14:15:43.823 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 14:15:43.864 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.3677ms
+2025-11-11 14:15:44.042 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 14:15:44.064 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.2672ms
+2025-11-11 14:15:52.800 +05:00 [INF] Now listening on: https://localhost:7005
+2025-11-11 14:15:52.847 +05:00 [INF] Now listening on: http://localhost:5140
+2025-11-11 14:15:52.992 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-11 14:15:52.994 +05:00 [INF] Hosting environment: Development
+2025-11-11 14:15:52.996 +05:00 [INF] Content root path: C:\Users\hsma\source\repos\EmployeeAdmnPortal
+2025-11-11 14:15:53.428 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2025-11-11 14:15:53.661 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 238.6941ms
+2025-11-11 14:15:53.694 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 14:15:53.694 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 14:15:53.704 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 10.2889ms
+2025-11-11 14:15:53.746 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.1974ms
+2025-11-11 14:15:53.811 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 14:15:53.845 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.5376ms
+2025-11-11 14:16:10.572 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7005/api/AsyncTest/delete/11 - null null
+2025-11-11 14:16:10.588 +05:00 [INF] Executing endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal)'
+2025-11-11 14:16:10.623 +05:00 [INF] Route matched with {action = "Delete", controller = "AsyncTest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeAdmnPortal.Controllers.AsyncTest (EmployeeAdmnPortal).
+2025-11-11 14:16:10.631 +05:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-11 14:16:11.533 +05:00 [INF] Deletion started for employee 11
+2025-11-11 14:16:12.075 +05:00 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[TableId], [e].[Address], [e].[Email], [e].[Name], [e].[Qualification]
+FROM [Employees] AS [e]
+WHERE [e].[TableId] = @__p_0
+2025-11-11 14:16:12.100 +05:00 [WRN] Employee 11 not found, nothing deleted.
+2025-11-11 14:16:12.110 +05:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-11-11 14:16:12.120 +05:00 [INF] Executed action EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal) in 1491.0148ms
+2025-11-11 14:16:12.124 +05:00 [INF] Executed endpoint 'EmployeeAdmnPortal.Controllers.AsyncTest.Delete (EmployeeAdmnPortal)'
+2025-11-11 14:16:12.128 +05:00 [INF] HTTP DELETE /api/AsyncTest/delete/11 responded 404 in 1542.1098 ms
+2025-11-11 14:16:12.141 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7005/api/AsyncTest/delete/11 - 404 null text/plain; charset=utf-8 1569.2955ms
+2025-11-11 14:17:48.549 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/ - null null
+2025-11-11 14:17:48.570 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-11-11 14:17:48.572 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-11-11 14:17:48.574 +05:00 [INF] HTTP GET / responded 200 in 4.1458 ms
+2025-11-11 14:17:48.576 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/ - 200 null text/plain; charset=utf-8 27.8675ms
