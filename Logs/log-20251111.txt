@@ -1316,3 +1316,87 @@ FROM [Employees] AS [e]
 2025-11-11 15:29:36.293 +05:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-11-11 15:29:36.296 +05:00 [INF] HTTP GET / responded 200 in 4.3781 ms
 2025-11-11 15:29:36.299 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/ - 200 null text/plain; charset=utf-8 10.7497ms
+2025-11-11 15:41:43.350 +05:00 [INF] Now listening on: https://localhost:7005
+2025-11-11 15:41:43.399 +05:00 [INF] Now listening on: http://localhost:5140
+2025-11-11 15:41:43.517 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-11 15:41:43.525 +05:00 [INF] Hosting environment: Development
+2025-11-11 15:41:43.526 +05:00 [INF] Content root path: C:\Users\hsma\source\repos\EmployeeAdmnPortal
+2025-11-11 15:41:44.148 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2025-11-11 15:41:44.416 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 277.7216ms
+2025-11-11 15:41:44.450 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 15:41:44.450 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 15:41:44.474 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 24.6931ms
+2025-11-11 15:41:44.512 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.7474ms
+2025-11-11 15:41:44.561 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 15:41:44.590 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.6213ms
+2025-11-11 15:41:56.572 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar - null null
+2025-11-11 15:41:56.589 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:41:56.605 +05:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-11-11 15:41:56.612 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:41:56.617 +05:00 [INF] HTTP GET /scalar responded 302 in 28.1805 ms
+2025-11-11 15:41:56.621 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar - 302 0 null 49.8553ms
+2025-11-11 15:41:56.625 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/ - null null
+2025-11-11 15:41:56.631 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:41:56.735 +05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-11-11 15:41:56.737 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:41:56.740 +05:00 [INF] HTTP GET /scalar/ responded 200 in 109.4491 ms
+2025-11-11 15:41:56.745 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/ - 200 null text/html 119.4806ms
+2025-11-11 15:41:56.751 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/scalar.aspnetcore.js - null null
+2025-11-11 15:41:56.751 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/scalar.js - null null
+2025-11-11 15:41:56.751 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 15:41:56.774 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-11-11 15:41:56.778 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-11-11 15:41:56.780 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 29.8256ms
+2025-11-11 15:41:56.765 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 15:41:56.793 +05:00 [INF] Sending file with download name ''.
+2025-11-11 15:41:56.793 +05:00 [INF] Sending file with download name ''.
+2025-11-11 15:41:56.802 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-11-11 15:41:56.803 +05:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 28.9357 ms
+2025-11-11 15:41:56.806 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/scalar.aspnetcore.js - 200 1046 text/javascript 55.1281ms
+2025-11-11 15:41:56.824 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.4366ms
+2025-11-11 15:41:56.826 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-11-11 15:41:56.831 +05:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 52.9909 ms
+2025-11-11 15:41:56.833 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/scalar.js - 200 928838 text/javascript 83.1138ms
+2025-11-11 15:41:57.201 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 15:41:57.217 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.8453ms
+2025-11-11 15:41:57.653 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/favicon.svg - null null
+2025-11-11 15:41:57.661 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-11-11 15:41:57.664 +05:00 [INF] Sending file with download name ''.
+2025-11-11 15:41:57.666 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-11-11 15:41:57.668 +05:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 6.9142 ms
+2025-11-11 15:41:57.671 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/favicon.svg - 200 533 image/svg+xml 18.0534ms
+2025-11-11 15:42:00.040 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar - null null
+2025-11-11 15:42:00.047 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:42:00.050 +05:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-11-11 15:42:00.054 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:42:00.056 +05:00 [INF] HTTP GET /scalar responded 302 in 8.2511 ms
+2025-11-11 15:42:00.058 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar - 302 0 null 18.8517ms
+2025-11-11 15:42:00.064 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/ - null null
+2025-11-11 15:42:00.072 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:42:00.074 +05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-11-11 15:42:00.075 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-11-11 15:42:00.077 +05:00 [INF] HTTP GET /scalar/ responded 200 in 5.0235 ms
+2025-11-11 15:42:00.081 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/ - 200 null text/html 17.9142ms
+2025-11-11 15:42:00.092 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-11 15:42:00.092 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/scalar.aspnetcore.js - null null
+2025-11-11 15:42:00.092 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/scalar/scalar.js - null null
+2025-11-11 15:42:00.094 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2025-11-11 15:42:00.100 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-11-11 15:42:00.103 +05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-11-11 15:42:00.108 +05:00 [INF] Sending file with download name ''.
+2025-11-11 15:42:00.110 +05:00 [INF] Sending file with download name ''.
+2025-11-11 15:42:00.098 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.0512ms
+2025-11-11 15:42:00.116 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-11-11 15:42:00.116 +05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-11-11 15:42:00.125 +05:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 24.4706 ms
+2025-11-11 15:42:00.126 +05:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 22.4997 ms
+2025-11-11 15:42:00.119 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.6175ms
+2025-11-11 15:42:00.128 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/scalar.aspnetcore.js - 304 null null 36.461ms
+2025-11-11 15:42:00.131 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/scalar/scalar.js - 304 null null 39.3574ms
+2025-11-11 15:42:00.303 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2025-11-11 15:42:00.315 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.6329ms
+2025-11-11 15:43:03.838 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7005/ - null null
+2025-11-11 15:43:03.845 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-11-11 15:43:03.846 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-11-11 15:43:03.848 +05:00 [INF] HTTP GET / responded 200 in 3.3974 ms
+2025-11-11 15:43:03.850 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7005/ - 200 null text/plain; charset=utf-8 11.728ms
