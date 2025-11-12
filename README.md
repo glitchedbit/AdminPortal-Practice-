@@ -50,46 +50,32 @@ A modern ASP.NET Core Web API built with **CQRS**, **MediatR**, **Repository Pat
 
 This project implements **CQRS (Command Query Responsibility Segregation)** pattern:
 
+```mermaid
+graph TD
+ A[Controllers<br/>HTTP Handling] --> B[MediatR<br/>Command/Query Dispatcher]
+    B --> C[Commands<br/>Write Operations]
+    B --> D[Queries<br/>Read Operations]
+    C --> E[Command Handlers]
+    D --> F[Query Handlers]
+    E --> G[Generic Repository]
+    F --> G
+    G --> H[EF Core DbContext]
+    H --> I[(SQL Server Database)]
+ 
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style C fill:#ffe1e1
+    style D fill:#e1ffe1
+    style G fill:#f0e1ff
+    style I fill:#e1e1ff
 ```
-????????????????????????????????????????
-?      Controllers        ?
-?    (Thin layer - HTTP handling)      ?
-????????????????????????????????????????
-               ?
-         ?
-????????????????????????????????????????
-?   MediatR           ?
-?    (Command/Query dispatcher)        ?
-????????????????????????????????????????
-       ?      ?
-       ?       ?
-????????????????     ????????????????
-?  Commands    ?  ?   Queries    ?
-?  (Writes)    ?     ?   (Reads)    ?
-????????????????     ????????????????
-?           ?
-       ?       ?
-????????????????     ????????????????
-?   Handlers   ?   ?   Handlers   ?
-????????????????     ????????????????
-       ?        ?
-  ??????????????????????
-    ?
-       ??????????????????
-       ?    Generic     ?
-   ?   Repository   ?
-       ??????????????????
-?
-       ??????????????????
-       ?   EF Core      ?
-       ?   DbContext    ?
-       ??????????????????
-       ?
-     ??????????????????
-       ?  SQL Server    ?
-       ? Database     ?
-       ??????????????????
-```
+
+**Flow:**
+1. **Controllers** receive HTTP requests
+2. **MediatR** dispatches commands/queries to appropriate handlers
+3. **Handlers** process business logic
+4. **Repository** abstracts data access
+5. **EF Core** manages database operations
 
 ---
 
@@ -100,7 +86,7 @@ This project implements **CQRS (Command Query Responsibility Segregation)** patt
 - **C# 12.0** - Modern C# features
 - **ASP.NET Core Web API** - RESTful API framework
 
-### Packages & Libraries
+### ?? Packages & Libraries
 
 | Package | Version | Purpose |
 |---------|---------|---------|
@@ -119,51 +105,63 @@ This project implements **CQRS (Command Query Responsibility Segregation)** patt
 
 ```
 EmployeeAdmnPortal/
-??? ?? CQRS/
-?   ??? ?? Commands/        # Write operations
+?
+??? CQRS/
+?   ??? Commands/    # Write operations
 ?   ?   ??? post-emp-command.cs
-?   ?   ??? put-emp-command.cs
+?   ? ??? put-emp-command.cs
 ?   ?   ??? delete-emp-command.cs
 ?   ?   ??? post-student-command.cs
 ?   ?   ??? post-teacher-command.cs
 ?   ?   ??? post-subject-command.cs
-?   ??? ?? Query/         # Read operations
+?   ?
+?   ??? Query/    # Read operations
 ?   ?   ??? get-emp-query.cs
 ?   ?   ??? get-student-query.cs
-?   ?   ??? get-teacher-query.cs
+??   ??? get-teacher-query.cs
 ?   ?   ??? get-subject-query.cs
-?   ??? ?? Handler/        # Request handlers
+?   ?
+?   ??? Handler/   # Request handlers
 ?   ?   ??? PostEmpAsync.cs
 ?   ?   ??? GetEmpAsync.cs
 ?   ?   ??? PutEmpAsync.cs
 ?   ?   ??? DeleteEmpAsync.cs
 ?   ?   ??? ... (Student, Teacher, Subject handlers)
-?   ??? ?? Infrastructure/     # Repository pattern
-?       ??? Repo.cs  # Generic repository interface
-?       ??? Implementation.cs     # Repository implementation
-??? ?? Controllers/       # API endpoints
+?   ?
+?   ??? Infrastructure/       # Repository pattern
+???? Repo.cs          # Generic repository interface
+?   ??? Implementation.cs        # Repository implementation
+?
+??? Controllers/          # API endpoints
 ?   ??? EmployeesController.cs
 ?   ??? StudentsController.cs
 ?   ??? TeachersController.cs
 ?   ??? SubjectsController.cs
-??? ?? Models/
-?   ??? ?? Entities/              # Domain models
+?
+??? Models/
+?   ??? Entities/   # Domain models
 ?   ?   ??? Employee.cs
-?   ?   ??? Student.cs
+? ?   ??? Student.cs
 ?   ?   ??? Teacher.cs
 ?   ?   ??? Subject.cs
-?   ??? ?? Dtos/                # Data transfer objects
+?   ?
+?   ??? Dtos/                # Data transfer objects
 ?       ??? Employeedto.cs
-??? ?? Data/
+?
+??? Data/
 ?   ??? ApplicationDbContext.cs
-??? ?? Services/     # Business services
+?
+??? Services/            # Business services
 ?   ??? ILoggerServices.cs
-? ??? LoggerServices.cs
-??? ?? Mappings/       # AutoMapper profiles
+?   ??? LoggerServices.cs
+?
+??? Mappings/          # AutoMapper profiles
 ?   ??? MappingProfile.cs
-??? ?? Migrations/ # EF Core migrations
-??? Program.cs                # Application entry point
-??? appsettings.json   # Configuration
+?
+??? Migrations/    # EF Core migrations
+?
+??? Program.cs   # Application entry point
+??? appsettings.json  # Configuration
 ```
 
 ---
@@ -171,6 +169,7 @@ EmployeeAdmnPortal/
 ## ?? Getting Started
 
 ### Prerequisites
+
 - **.NET 8.0 SDK** or later - [Download](https://dotnet.microsoft.com/download/dotnet/8.0)
 - **SQL Server** (LocalDB, Express, or Full) - [Download](https://www.microsoft.com/sql-server/sql-server-downloads)
 - **Visual Studio 2022** or **VS Code** (optional)
@@ -178,43 +177,45 @@ EmployeeAdmnPortal/
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/glitchedbit/AdminPortal-Practice-.git
-   cd EmployeeAdmnPortal
-   ```
+#### 1?? Clone the repository
+```bash
+git clone https://github.com/glitchedbit/AdminPortal-Practice-.git
+cd EmployeeAdmnPortal
+```
 
-2. **Update Connection Strings**
-   
-   Edit `appsettings.json` and update the SQL Server connection strings:
-   ```json
-   {
-     "ConnectionStrings": {
-     "DefaultConnection": "Server=YOUR_SERVER;Database=worksdb;Trusted_Connection=True;TrustServerCertificate=true",
-       "DefaultlogConnection": "Server=YOUR_SERVER;Database=logsdb;Trusted_Connection=True;TrustServerCertificate=true"
-     }
-   }
-   ```
+#### 2?? Update Connection Strings
 
-3. **Restore NuGet Packages**
-   ```bash
+Edit `appsettings.json` and update the SQL Server connection strings:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=YOUR_SERVER;Database=worksdb;Trusted_Connection=True;TrustServerCertificate=true",
+    "DefaultlogConnection": "Server=YOUR_SERVER;Database=logsdb;Trusted_Connection=True;TrustServerCertificate=true"
+  }
+}
+```
+
+#### 3?? Restore NuGet Packages
+```bash
 dotnet restore
- ```
+```
 
-4. **Apply Database Migrations**
-   ```bash
-   dotnet ef database update
-   ```
+#### 4?? Apply Database Migrations
+```bash
+dotnet ef database update
+```
 
-5. **Run the Application**
-   ```bash
-   dotnet run
-   ```
+#### 5?? Run the Application
+```bash
+dotnet run
+```
 
-6. **Access the API**
-   - Swagger UI: `https://localhost:5001/swagger`
-   - Scalar Docs: `https://localhost:5001/scalar`
-   - API Base: `https://localhost:5001/api`
+#### 6?? Access the API
+
+- **Swagger UI:** `https://localhost:5001/swagger`
+- **Scalar Docs:** `https://localhost:5001/scalar`
+- **API Base:** `https://localhost:5001/api`
 
 ---
 
@@ -223,57 +224,57 @@ dotnet restore
 ### Entity Relationships
 
 ```
-Employee (1:1) ??????? Teacher
-       ?
-     ? (1:N)
-     ?
-      Student
-  ?
-     ? (N:M)
-        ?
-         Subject
+Employee (1:1) ??????> Teacher
+?
+         ? (1:N)
+    ?
+           Student
+   ?
+           ? (N:M)
+ ?
+    Subject
 ```
 
-### Tables
+### ?? Tables
 
 #### **Employee**
 
 | Column | Type | Description |
 |--------|------|-------------|
-| TableId (PK) | int | Primary key |
-| Name | string | Employee name |
-| Email | string | Contact email |
-| Qualification | string | Educational background |
-| Address | string | Physical address |
+| TableId (PK) | `int` | Primary key |
+| Name | `string` | Employee name |
+| Email | `string` | Contact email |
+| Qualification | `string` | Educational background |
+| Address | `string` | Physical address |
 
 #### **Teacher**
 
 | Column | Type | Description |
 |--------|------|-------------|
-| TeacherId (PK) | int | Primary key |
-| Name | string | Teacher name |
-| Qualification | string | Educational credentials |
-| Class | string | Assigned class |
-| Active | bool | Active status |
-| TableId (FK) | int | Foreign key to Employee |
+| TeacherId (PK) | `int` | Primary key |
+| Name | `string` | Teacher name |
+| Qualification | `string` | Educational credentials |
+| Class | `string` | Assigned class |
+| Active | `bool` | Active status |
+| TableId (FK) | `int` | Foreign key to Employee |
 
 #### **Student**
 
 | Column | Type | Description |
 |--------|------|-------------|
-| RollId (PK) | int | Primary key |
-| Name | string | Student name |
-| Class | string | Current class |
-| Age | int | Student age |
-| Active | bool | Enrollment status |
-| TeacherId (FK) | int | Foreign key to Teacher |
+| RollId (PK) | `int` | Primary key |
+| Name | `string` | Student name |
+| Class | `string` | Current class |
+| Age | `int` | Student age |
+| Active | `bool` | Enrollment status |
+| TeacherId (FK) | `int` | Foreign key to Teacher |
 
 #### **Subject**
 
 | Column | Type | Description |
 |--------|------|-------------|
-| SubjectId (PK) | int | Primary key |
-| CourseName | string | Subject name |
+| SubjectId (PK) | `int` | Primary key |
+| CourseName | `string` | Subject name |
 
 ---
 
@@ -284,14 +285,14 @@ Employee (1:1) ??????? Teacher
 https://localhost:5001/api
 ```
 
-### Students Endpoints
+### ?? Students Endpoints
 
-#### Get All Students
+#### ? Get All Students
 ```http
 GET /api/students
 ```
 
-#### Add Student
+#### ? Add Student
 ```http
 POST /api/students/add
 Content-Type: application/json
@@ -300,12 +301,12 @@ Content-Type: application/json
   "name": "John Doe",
   "class": "10th Grade",
   "age": 15,
-  "active": true,
+"active": true,
   "teacherId": 1
 }
 ```
 
-#### Update Student
+#### ? Update Student
 ```http
 PUT /api/students/update
 Content-Type: application/json
@@ -320,23 +321,24 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Student
+#### ? Delete Student
 ```http
 DELETE /api/students/delete/{id}
 ```
 
-### Similar endpoints exist for:
-- `/api/teachers`
-- `/api/subjects`
-- `/api/employees`
+### ?? Similar endpoints exist for:
+- `/api/teachers` ?????
+- `/api/subjects` ??
+- `/api/employees` ??
 
-**Note:** For complete API documentation, visit the Swagger UI or Scalar interface when running the application.
+> **Note:** For complete API documentation, visit the Swagger UI or Scalar interface when running the application.
 
 ---
 
 ## ?? Configuration
 
 ### Environment Variables
+
 The application uses `appsettings.json` for configuration:
 
 ```json
@@ -356,26 +358,28 @@ The application uses `appsettings.json` for configuration:
 ```
 
 ### Serilog Configuration
+
 Logs are written to:
-- **Console** - Real-time output
-- **File** - Daily rolling files in `/Logs` directory
-- **Database** - Stored in SQL Server table `Logs`
+- **Console** ? Real-time output
+- **File** ? Daily rolling files in `/Logs` directory
+- **Database** ? Stored in SQL Server table `Logs`
 
 ---
 
 ## ?? Logging
 
-### Log Levels
-- **Information** - General application flow
-- **Warning** - Abnormal or unexpected events
-- **Error** - Errors and exceptions
+### ?? Log Levels
+- **Information** ? General application flow
+- **Warning** ? Abnormal or unexpected events
+- **Error** ? Errors and exceptions
 
-### Log Locations
+### ?? Log Locations
 1. **Console Output** - Development debugging
 2. **File System** - `Logs/log-YYYYMMDD.txt` (rolling daily)
 3. **SQL Server** - `logsdb.Logs` table (auto-created)
 
 ### Custom Logging Service
+
 ```csharp
 public interface ILoggerServices
 {
@@ -433,23 +437,24 @@ dotnet ef migrations remove
 
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
 
 ---
 
 ## ?? License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## ????? Author
 
 **glitchedbit**
+
 - GitHub: [@glitchedbit](https://github.com/glitchedbit)
 - Repository: [AdminPortal-Practice-](https://github.com/glitchedbit/AdminPortal-Practice-)
 
@@ -468,6 +473,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ?? Support
 
 If you encounter any issues or have questions:
+
 1. Check the [Issues](https://github.com/glitchedbit/AdminPortal-Practice-/issues) page
 2. Create a new issue with detailed information
 3. Star ? the repository if you find it helpful!
@@ -475,7 +481,7 @@ If you encounter any issues or have questions:
 ---
 
 <div align="center">
-  
-**Made with ?? using .NET 8.0**
+
+### Made with ?? using .NET 8.0
 
 </div>
