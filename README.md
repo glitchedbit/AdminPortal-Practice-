@@ -1,4 +1,4 @@
-# ?? Employee Admin Portal - Educational Management System
+# 🎓 Employee Admin Portal - Educational Management System
 
 A modern ASP.NET Core Web API built with **CQRS**, **MediatR**, **Repository Pattern**, and **Serilog** for managing educational entities including Employees, Teachers, Students, and Subjects.
 
@@ -8,7 +8,7 @@ A modern ASP.NET Core Web API built with **CQRS**, **MediatR**, **Repository Pat
 
 ---
 
-## ?? Table of Contents
+## 📋 Table of Contents
 
 - [Features](#-features)
 - [Architecture](#-architecture)
@@ -23,30 +23,30 @@ A modern ASP.NET Core Web API built with **CQRS**, **MediatR**, **Repository Pat
 
 ---
 
-## ? Features
+## ✨ Features
 
-### ?? Core Functionality
+### 🎯 Core Functionality
 - **Employee Management** - CRUD operations for employee records
 - **Teacher Management** - Manage teacher profiles with employee linkage
 - **Student Management** - Handle student information and enrollments
 - **Subject Management** - Course and subject administration
 
-### ??? Architectural Patterns
-- ? **CQRS Pattern** - Separation of read and write operations
-- ? **Mediator Pattern** - Decoupled request/response handling with MediatR
-- ? **Repository Pattern** - Generic repository for data access abstraction
-- ? **Dependency Injection** - Built-in ASP.NET Core DI container
+### 🏗️ Architectural Patterns
+- ✅ **CQRS Pattern** - Separation of read and write operations
+- ✅ **Mediator Pattern** - Decoupled request/response handling with MediatR
+- ✅ **Repository Pattern** - Generic repository for data access abstraction
+- ✅ **Dependency Injection** - Built-in ASP.NET Core DI container
 
-### ?? Technical Features
-- ?? Comprehensive logging with **Serilog** (Console, File, and Database)
-- ?? API Documentation with **Swagger/OpenAPI** and **Scalar**
-- ??? Entity Framework Core with SQL Server
-- ?? Async/Await patterns throughout
-- ?? Clean Architecture principles
+### 🔧 Technical Features
+- 📝 Comprehensive logging with **Serilog** (Console, File, and Database)
+- 📖 API Documentation with **Swagger/OpenAPI** and **Scalar**
+- 🗄️ Entity Framework Core with SQL Server
+- 🔄 Async/Await patterns throughout
+- 🎨 Clean Architecture principles
 
 ---
 
-## ??? Architecture
+## 🏛️ Architecture
 
 This project implements **CQRS (Command Query Responsibility Segregation)** pattern:
 
@@ -79,14 +79,14 @@ graph TD
 
 ---
 
-## ??? Tech Stack
+## 🛠️ Tech Stack
 
 ### Core Framework
 - **.NET 8.0** - Latest LTS version
 - **C# 12.0** - Modern C# features
 - **ASP.NET Core Web API** - RESTful API framework
 
-### ?? Packages & Libraries
+### 📦 Packages & Libraries
 
 | Package | Version | Purpose |
 |---------|---------|---------|
@@ -101,72 +101,72 @@ graph TD
 
 ---
 
-## ?? Project Structure
+## 📁 Project Structure
 
 ```
 EmployeeAdmnPortal/
-?
-??? CQRS/
-?   ??? Commands/    # Write operations
-?   ?   ??? post-emp-command.cs
-?   ? ??? put-emp-command.cs
-?   ?   ??? delete-emp-command.cs
-?   ?   ??? post-student-command.cs
-?   ?   ??? post-teacher-command.cs
-?   ?   ??? post-subject-command.cs
-?   ?
-?   ??? Query/    # Read operations
-?   ?   ??? get-emp-query.cs
-?   ?   ??? get-student-query.cs
-??   ??? get-teacher-query.cs
-?   ?   ??? get-subject-query.cs
-?   ?
-?   ??? Handler/   # Request handlers
-?   ?   ??? PostEmpAsync.cs
-?   ?   ??? GetEmpAsync.cs
-?   ?   ??? PutEmpAsync.cs
-?   ?   ??? DeleteEmpAsync.cs
-?   ?   ??? ... (Student, Teacher, Subject handlers)
-?   ?
-?   ??? Infrastructure/       # Repository pattern
-???? Repo.cs          # Generic repository interface
-?   ??? Implementation.cs        # Repository implementation
-?
-??? Controllers/          # API endpoints
-?   ??? EmployeesController.cs
-?   ??? StudentsController.cs
-?   ??? TeachersController.cs
-?   ??? SubjectsController.cs
-?
-??? Models/
-?   ??? Entities/   # Domain models
-?   ?   ??? Employee.cs
-? ?   ??? Student.cs
-?   ?   ??? Teacher.cs
-?   ?   ??? Subject.cs
-?   ?
-?   ??? Dtos/                # Data transfer objects
-?       ??? Employeedto.cs
-?
-??? Data/
-?   ??? ApplicationDbContext.cs
-?
-??? Services/            # Business services
-?   ??? ILoggerServices.cs
-?   ??? LoggerServices.cs
-?
-??? Mappings/          # AutoMapper profiles
-?   ??? MappingProfile.cs
-?
-??? Migrations/    # EF Core migrations
-?
-??? Program.cs   # Application entry point
-??? appsettings.json  # Configuration
+│
+├── CQRS/
+│   ├── Commands/    # Write operations
+│   │   ├── post-emp-command.cs
+│   │ ├── put-emp-command.cs
+│   │   ├── delete-emp-command.cs
+│   │   ├── post-student-command.cs
+│   │   ├── post-teacher-command.cs
+│   │   └── post-subject-command.cs
+│   │
+│   ├── Query/    # Read operations
+│   │   ├── get-emp-query.cs
+│   │   ├── get-student-query.cs
+││   ├── get-teacher-query.cs
+│   │   └── get-subject-query.cs
+│   │
+│   ├── Handler/   # Request handlers
+│   │   ├── PostEmpAsync.cs
+│   │   ├── GetEmpAsync.cs
+│   │   ├── PutEmpAsync.cs
+│   │   ├── DeleteEmpAsync.cs
+│   │   └── ... (Student, Teacher, Subject handlers)
+│   │
+│   └── Infrastructure/       # Repository pattern
+│├── Repo.cs          # Generic repository interface
+│   └── Implementation.cs        # Repository implementation
+│
+├── Controllers/          # API endpoints
+│   ├── EmployeesController.cs
+│   ├── StudentsController.cs
+│   ├── TeachersController.cs
+│   └── SubjectsController.cs
+│
+├── Models/
+│   ├── Entities/   # Domain models
+│   │   ├── Employee.cs
+│ │   ├── Student.cs
+│   │   ├── Teacher.cs
+│   │   └── Subject.cs
+│   │
+│   └── Dtos/                # Data transfer objects
+│       └── Employeedto.cs
+│
+├── Data/
+│   └── ApplicationDbContext.cs
+│
+├── Services/            # Business services
+│   ├── ILoggerServices.cs
+│   └── LoggerServices.cs
+│
+├── Mappings/          # AutoMapper profiles
+│   └── MappingProfile.cs
+│
+├── Migrations/    # EF Core migrations
+│
+├── Program.cs   # Application entry point
+└── appsettings.json  # Configuration
 ```
 
 ---
 
-## ?? Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -177,13 +177,13 @@ EmployeeAdmnPortal/
 
 ### Installation
 
-#### 1?? Clone the repository
+#### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/glitchedbit/AdminPortal-Practice-.git
 cd EmployeeAdmnPortal
 ```
 
-#### 2?? Update Connection Strings
+#### 2️⃣ Update Connection Strings
 
 Edit `appsettings.json` and update the SQL Server connection strings:
 
@@ -196,22 +196,22 @@ Edit `appsettings.json` and update the SQL Server connection strings:
 }
 ```
 
-#### 3?? Restore NuGet Packages
+#### 3️⃣ Restore NuGet Packages
 ```bash
 dotnet restore
 ```
 
-#### 4?? Apply Database Migrations
+#### 4️⃣ Apply Database Migrations
 ```bash
 dotnet ef database update
 ```
 
-#### 5?? Run the Application
+#### 5️⃣ Run the Application
 ```bash
 dotnet run
 ```
 
-#### 6?? Access the API
+#### 6️⃣ Access the API
 
 - **Swagger UI:** `https://localhost:5001/swagger`
 - **Scalar Docs:** `https://localhost:5001/scalar`
@@ -219,23 +219,23 @@ dotnet run
 
 ---
 
-## ??? Database Schema
+## 🗄️ Database Schema
 
 ### Entity Relationships
 
 ```
-Employee (1:1) ??????> Teacher
-?
-         ? (1:N)
-    ?
+Employee (1:1) ──────> Teacher
+│
+         │ (1:N)
+    ▼
            Student
-   ?
-           ? (N:M)
- ?
+   │
+           │ (N:M)
+ ▼
     Subject
 ```
 
-### ?? Tables
+### 📊 Tables
 
 #### **Employee**
 
@@ -278,21 +278,21 @@ Employee (1:1) ??????> Teacher
 
 ---
 
-## ?? API Documentation
+## 📚 API Documentation
 
 ### Base URL
 ```
 https://localhost:5001/api
 ```
 
-### ?? Students Endpoints
+### 🎓 Students Endpoints
 
-#### ? Get All Students
+#### ➤ Get All Students
 ```http
 GET /api/students
 ```
 
-#### ? Add Student
+#### ➤ Add Student
 ```http
 POST /api/students/add
 Content-Type: application/json
@@ -306,7 +306,7 @@ Content-Type: application/json
 }
 ```
 
-#### ? Update Student
+#### ➤ Update Student
 ```http
 PUT /api/students/update
 Content-Type: application/json
@@ -321,21 +321,21 @@ Content-Type: application/json
 }
 ```
 
-#### ? Delete Student
+#### ➤ Delete Student
 ```http
 DELETE /api/students/delete/{id}
 ```
 
-### ?? Similar endpoints exist for:
-- `/api/teachers` ?????
-- `/api/subjects` ??
-- `/api/employees` ??
+### 🔗 Similar endpoints exist for:
+- `/api/teachers` 👨‍🏫
+- `/api/subjects` 📖
+- `/api/employees` 👔
 
 > **Note:** For complete API documentation, visit the Swagger UI or Scalar interface when running the application.
 
 ---
 
-## ?? Configuration
+## ⚙️ Configuration
 
 ### Environment Variables
 
@@ -360,20 +360,20 @@ The application uses `appsettings.json` for configuration:
 ### Serilog Configuration
 
 Logs are written to:
-- **Console** ? Real-time output
-- **File** ? Daily rolling files in `/Logs` directory
-- **Database** ? Stored in SQL Server table `Logs`
+- **Console** → Real-time output
+- **File** → Daily rolling files in `/Logs` directory
+- **Database** → Stored in SQL Server table `Logs`
 
 ---
 
-## ?? Logging
+## 📊 Logging
 
-### ?? Log Levels
-- **Information** ? General application flow
-- **Warning** ? Abnormal or unexpected events
-- **Error** ? Errors and exceptions
+### 📈 Log Levels
+- **Information** → General application flow
+- **Warning** → Abnormal or unexpected events
+- **Error** → Errors and exceptions
 
-### ?? Log Locations
+### 📍 Log Locations
 1. **Console Output** - Development debugging
 2. **File System** - `Logs/log-YYYYMMDD.txt` (rolling daily)
 3. **SQL Server** - `logsdb.Logs` table (auto-created)
@@ -391,7 +391,7 @@ public interface ILoggerServices
 
 ---
 
-## ?? Testing
+## 🧪 Testing
 
 ### Run the Application
 ```bash
@@ -417,7 +417,7 @@ dotnet ef migrations remove
 
 ---
 
-## ?? Future Enhancements
+## 🔮 Future Enhancements
 
 - [ ] JWT Authentication & Authorization
 - [ ] Role-based access control (RBAC)
@@ -433,7 +433,7 @@ dotnet ef migrations remove
 
 ---
 
-## ?? Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -445,13 +445,13 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## ?? License
+## 📝 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## ????? Author
+## 👨‍💻 Author
 
 **glitchedbit**
 
@@ -460,7 +460,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## ?? Acknowledgments
+## 🙏 Acknowledgments
 
 - ASP.NET Core Documentation
 - MediatR by Jimmy Bogard
@@ -470,18 +470,18 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## ?? Support
+## 📞 Support
 
 If you encounter any issues or have questions:
 
 1. Check the [Issues](https://github.com/glitchedbit/AdminPortal-Practice-/issues) page
 2. Create a new issue with detailed information
-3. Star ? the repository if you find it helpful!
+3. Star ⭐ the repository if you find it helpful!
 
 ---
 
 <div align="center">
 
-### Made with ?? using .NET 8.0
+### Made with ❤️ using .NET 8.0
 
 </div>
